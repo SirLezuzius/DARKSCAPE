@@ -34,20 +34,19 @@ Save changes
 ## 4. Restart Redmine (if needed)
 Depending on your setup, you may need to restart your Redmine server or clear the cache:
 
-bash
-Copy
-Edit
-bundle exec rake tmp:cache:clear
-bundle exec rake tmp:sessions:clear
+bash<br>
+Copy<br>
+Edit<br>
+bundle exec rake tmp:cache:clear<br>
+bundle exec rake tmp:sessions:clear<br>
 Then restart your web server (e.g., Passenger, Puma, or Apache).
 
 🧪 Tested On
 
-  Redmine version                6.0.4.stable
-  Ruby version                   3.1.2-p20 (2022-04-12) [x86_64-linux]
-  Rails version                  7.2.2.1
-  Environment                    production
-  Database adapter               Mysql2
+  Redmine version = 6.0.4.stable<br>
+  Ruby version = 3.1.2-p20 (2022-04-12) [x86_64-linux]<br>
+  Rails version = 7.2.2.1<br>
+  Database adapter = Mysql2
 
 Most major browsers (Chrome, Firefox, Safari)
 
