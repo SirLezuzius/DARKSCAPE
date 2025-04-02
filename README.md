@@ -61,8 +61,6 @@ Most major browsers (Chrome, Firefox, Safari)
 🛠 Customisation
 You're welcome to modify the CSS or images to suit your organisation's branding. Just remember to keep backups if upgrading the theme later.
 
-🤝 Contributing
-If you'd like to improve the theme or fix bugs, feel free to fork the repo and submit a pull request.
 
 📄 License
 This theme is open source and available under the MIT License.
