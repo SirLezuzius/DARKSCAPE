@@ -1,6 +1,6 @@
 # Redmine 6 Dark Theme - Darkscape®
 
-A clean, responsive, and user-friendly theme designed for Redmine 6. This theme enhances the default interface with a modern layout, improved readability, and a more intuitive user experience – ideal for both light and dark environments.
+A clean, responsive, and user-friendly theme designed for Redmine 6. This theme enhances the default interface with a modern layout, improved readability, and a more intuitive user experience.
 
 ## Overview
 
