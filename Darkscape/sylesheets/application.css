@@ -1,336 +1,614 @@
-/* Redmine - project management software
- * Copyright (C) 2006-  Jean-Philippe Lang
- *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 2
- *  of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA. */
+/*  
+ * 
+ * Darkscape Theme for Redmine
+   Author: SirLezuzius (Laszlo Balizs)
 
- @import url(/application.css);
+   Description:
+   A custom dark theme tailored for elegance, clarity, and usability,
+   inspired by modern UI principles and minimalist aesthetics.
 
- /* Base Colours */
- body {
-   color: #d0d0d0;
-   background: #1e1e1e;
-   font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
- }
+   Originally based on Redmine Classic Theme.
+   Now extended with full dark styling, icon-enhanced menus, gradient
+   backgrounds, and mobile-aware responsiveness.
+
+    Crafted with care for the Factum Radioscape Support Portal.
+
+   Version: 1.0
+   Date: 2025-03-28
+   License: GNU GPL v2 or later (inherits from Redmine’s base license)*/
+
+@import url(/application.css);
+
+/* Base Colours */
+
+body {
+  color: #141414;
+  background: #141414 !important;
+  font-family: "Roboto", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main {
+  background: #141414 !important;
+}
+
+#content {
+  background: linear-gradient(to bottom, #141414, #3a3a3a);
+  border-radius: 4px;
+  padding: 1em;
+}
+
+/* Remove dotted layout borders on My Page blocks */
+.mypage-box, .mypage-box .box, .mypage-box .autoscroll, .mypage-box .splitcontentleft, .mypage-box .splitcontentright {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Also catch fieldset and legacy layout divs */
+fieldset,
+.my-page,
+.splitcontent,
+.splitcontenttop,
+.splitcontentleft,
+.splitcontentright,
+.block,
+.box {
+  border: none !important;
+  outline: none !important;
+}
+
+/* LOGIN BOX AREA */
+div#login-form,
+div.login-box,
+form#login-form {
+  background-color: #2a2a2a !important;
+  border: 1px solid #444 !important;
+  border-radius: 8px !important;
+  padding: 20px !important;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  color: #eee !important;
+}
+
+/* LOGIN INPUT FIELDS */
+#username,
+#password,
+input[type="submit"] {
+  background-color: #1e1e1e !important;
+  border: 1px solid #555 !important;
+  color: #ddd !important;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* LOGIN BUTTON HOVER */
+input[type="submit"]:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+/* LOST PASSWORD & LINKS */
+#login-form a,
+.login-box a {
+  color: #89c3ff !important;
+}
+
+#login-form a:hover,
+.login-box a:hover {
+  color: #aad4ff !important;
+  text-decoration: underline;
+}
+
+
+/* SIDE PANEL Details and Side Panel */
+div.issue, #sidebar, .box, .contextual, .nodata, .warning, .conflict {
+  background: #2b2b2b;
+  color: #d0d0d0;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/* Top Menu plus Icons */
+#top-menu a.home,
+#top-menu a.my-page,
+#top-menu a.projects,
+#top-menu a.administration,
+#top-menu a.help {
+  background-position: 0% 40%;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  filter: brightness(0.8);
+}
+
+#top-menu a.home::before {
+  content: "🏠 ";
+}
+
+#top-menu a.my-page::before {
+  content: "🙋 ";
+}
+
+#top-menu a.projects::before {
+  content: "🗂️ ";
+}
+
+#top-menu a.administration::before {
+  content: "🛠️ ";
+}
+
+#top-menu a.help::before {
+  content: "❓ ";
+}
+
+#top-menu {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-size: 92%;
+  height: 2em;
+  padding: 1%;
+  background: linear-gradient(to right, #141414, #3a3a3a);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  width: 99%; /* ensures full stretch */
+}
+#top-menu a {
+  font-weight: bold;
+  color: #ffffff;
+}
+#top-menu a:hover {
+  color: #89c9ff;
+}
+
+/* Header */
+#header {
+  background: #141414 url(https://PLACE YOUR LOGO URL HERE no-repeat 2px;
+  height: 5.8em;
+  padding: 175px 0 0 0px;
+}
+#header h1 {
+  padding-left: 310px; /* adjust to logo width */
+  margin-left: 6px;
+  color: #ffffff;
+}
+
+/* Main Menu */
+#main-menu {
+  background: linear-gradient(to right, #141414, #3a3a3a);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  border-top: 1px solid #444;
+  width: 100%;
+}
+#main-menu li {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+#main-menu li a {
+  background: linear-gradient(to left, #141414, #3a3a3a);
+  border-right: 1px solid #444;
+  font-size: 90%;
+  padding: 4px 8px;
+  font-weight: bold;
+  color: #ffffff;
+}
+#main-menu li a:hover {
+  background-color: #424242;
+  color: #89c9ff;
+}
+#main-menu li a.selected,
+#main-menu li a.selected:hover {
+  background-color: #005f87;
+  color: #ffffff;
+}
+#main-menu li a.new-object {
+  background-color: #0077aa;
+  color: #fff;
+}
+
+/* Dropdown Menu */
+#main-menu .menu-children {
+  border: 1px solid #444;
+  background-color: #424242;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+#main-menu .menu-children li a {
+  border: none;
+  color: #ffffff;
+}
+#main-menu .menu-children li a:hover {
+  background-color:#424242;
+  color: #42aaff;
+}
+
+/* PROJECT JUMP DROPDOWN STYLES */
+
+#project-jump {
+  background-color: #2a2a2a !important;
+  color: #ddd !important;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+  padding: 6px !important;
+}
+
+#project-jump .drdn-trigger {
+  color: #eee !important;
+  background-color: #2a2a2a !important;
+  border: none !important;
+  padding: 4px 8px !important;
+  font-weight: bold;
+}
+
+#project-jump .drdn-content {
+  background-color: #2a2a2a !important;
+  color: #ddd !important;
+  border: none !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4) !important;
+  padding: 6px !important;
+  z-index: 999 !important;
+}
+
+#project-jump .drdn-content a {
+  color: #ddd !important;
+  background-color: transparent !important;
+  display: block;
+  padding: 4px 8px;
+  text-decoration: none;
+  font-weight: normal;
+  border: none !important;
+}
+
+#project-jump .drdn-content a:hover {
+  background-color: #3a3a3a !important;
+  color: #aad4ff !important;
+  border: none !important;
+}
+
+#project-jump input.autocomplete {
+  background-color: #2b2f3a !important;
+  color: #ddd !important;
+  border: none !important;
+  padding: 6px !important;
+  
+}
+#project-jump .drdn-items {
+  background-color: #2a2a2a !important;
+  color: #ddd !important;
+  border: none !important;
  
- #main {
-   background: #1e1e1e;
- }
- 
- #content {
-   background: #1e1e1e;
-   border-radius: 4px;
-   padding: 1em;
- }
- 
- 
- /* LOGIN BOX AREA */
- div#login-form,
- div.login-box,
- form#login-form {
-   background-color: #2a2a2a !important;
-   border: 1px solid #444 !important;
-   border-radius: 8px !important;
-   padding: 20px !important;
-   box-shadow: 0 0 10px rgba(0,0,0,0.5);
-   color: #eee !important;
- }
- 
- /* LOGIN INPUT FIELDS */
- #username,
- #password,
- input[type="submit"] {
-   background-color: #1e1e1e !important;
-   border: 1px solid #555 !important;
-   color: #ddd !important;
-   padding: 8px;
-   border-radius: 4px;
-   width: 100%;
-   margin-top: 5px;
- }
- 
- /* LOGIN BUTTON HOVER */
- input[type="submit"]:hover {
-   background-color: #333 !important;
-   color: #fff !important;
-   cursor: pointer;
- }
- 
- /* LOST PASSWORD & LINKS */
- #login-form a,
- .login-box a {
-   color: #89c3ff !important;
- }
- 
- #login-form a:hover,
- .login-box a:hover {
-   color: #aad4ff !important;
-   text-decoration: underline;
- }
- 
- 
- /* Issue Details and Side Panel */
- div.issue, #sidebar, .box, .contextual, .nodata, .warning, .conflict {
-   background: #2b2b2b;
-   color: #d0d0d0;
-   border: 1px solid #444;
-   padding: 10px;
-   border-radius: 4px;
- }
- 
- /* Top Menu */
- #top-menu {
-   font-size: 80%;
-   height: 2em;
-   padding: 1%;
-   background-color: #424242;
- }
- #top-menu a {
-   font-weight: bold;
-   color: #ffffff;
- }
- #top-menu a:hover {
-   color: #89c9ff;
- }
- 
- /* Header */
- #header {
-   background: #1e1e1e;
-   height: 5.8em;
-   padding: 20px 0 0 0;
- }
- #header h1 {
-   margin-left: 6px;
-   color: #ffffff;
- }
- 
- /* Main Menu */
- #main-menu {
-   background-color: #424242;
-   border-top: 1px solid #444;
-   width: 100%;
- }
- #main-menu li {
-   margin: 0;
-   padding: 0;
- }
- #main-menu li a {
-   background-color: #424242;
-   border-right: 1px solid #444;
-   font-size: 90%;
-   padding: 4px 8px;
-   font-weight: bold;
-   color: #ffffff;
- }
- #main-menu li a:hover {
-   background-color: #424242;
-   color: #89c9ff;
- }
- #main-menu li a.selected,
- #main-menu li a.selected:hover {
-   background-color: #005f87;
-   color: #ffffff;
- }
- #main-menu li a.new-object {
-   background-color: #0077aa;
-   color: #fff;
- }
- 
- /* Dropdown Menu */
- #main-menu .menu-children {
-   border: 1px solid #444;
-   background-color: #424242;
- }
- #main-menu .menu-children li a {
-   border: none;
-   color: #424242;
- }
- #main-menu .menu-children li a:hover {
-   background-color:#424242;
- }
- 
- /* --- DARK THEME: RESPONSIVE STYLES --- */
- @media screen and (max-width: 768px) {
-   /* Top bar */
-   #top-menu {
-     background-color: #1e1e1e !important;
-     color: #fff !important;
-   }
- 
-   #top-menu a {
-     color: #ddd !important;
-   }
- 
-   #top-menu a:hover {
-     color: #aad4ff !important;
-   }
- 
-   /* Dropdown mobile menu */
-   .flyout-menu, .flyout-menu ul {
-     background-color: #2b2b2b !important;
-     border: 1px solid #444 !important;
-     color: #ddd !important;
-   }
- 
-   .flyout-menu li a {
-     background-color: #2a2a2a !important;
-     color: #eee !important;
-     border-bottom: 1px solid #444 !important;
-   }
- 
-   .flyout-menu li a:hover {
-     background-color: #3a3a3a !important;
-     color: #fff !important;
-   }
- 
-   /* Ensure header and main elements remain dark */
-   #header, #main, #content {
-     background-color: #1e1e1e !important;
-     color: #ddd !important;
-   }
- }
- 
- 
- /* Footer */
- #footer {
-   background-color: #1e1e1e;
-   border: 0;
-   color: #aaa;
- }
- #footer a {
-   color: #fff;
-   font-weight: bold;
- }
- 
- /* Links */
- a {
-   color: #82cfff;
-   font-weight: bold;
- }
- a:hover {
-   color: #42aaff;
-   text-decoration: underline;
- }
- 
- /* Headings */
- h2, h3, h4, .wiki h1, .wiki h2, .wiki h3 {
-   border-bottom: 0px;
-   color: #e0e0e0;
-   font-family: "Trebuchet MS", Georgia, "Times New Roman", serif;
- }
- h2, .wiki h1 {
-   letter-spacing: -1px;
- }
- h4 {
-   border-bottom: dotted 1px #555;
- }
- 
- /* Tables */
- table {
-   background-color: #2b2b2b; !important;
-   border-collapse: collapse;
-   width: 100%;
-   border-spacing: 50px 10px; /* Horizontal and Vertical spacing */
- }
- table th {
-   background-color: #2b2b2b; !important;
-   color: #2b2b2b; !important;
-   border-bottom: 1px dotted #444;
-   padding: 10px;
-   font-weight: bold;
- }
- table td {
-   border-top: 1px dotted #444;
-   padding-top: 20px;
-   padding-bottom: 20px;
-   text-align: center;
- }
- table tr:nth-child(odd) {
-   background-color: #2a2a2a;
-   text-align: center;
- }
- 
- table tr:nth-child(even) {
-   background-color: #242424;
-   text-align: center;
- }
- 
- table tr:hover {
-   background-color: #3a3a3a !important; /* Darker gray, ensures override */
-   color: #d0d0d0 !important; /* Keeps the text color readable */
-   transition: background-color 0.2s ease-in-out;
- }
- 
- 
- /* Project Overview Table */
- .box table {
-   background-color: #2b2b2b;
-   color: #d0d0d0;
- }
- .box table th {
-   background-color: #1f1f1f;
-   color: #d0d0d0;
-   border-bottom: 1px dotted #444;
- }
- .box table td {
-   background-color: #2a2a2a;
-   border-top: 1px dotted #444;
-   padding: 8px;
- }
- .box table tr:nth-child(odd) {
-   background-color: #2a2a2a;
- }
- 
- .box table tr:nth-child(even) {
-   background-color: #242424;
- }
- 
- .box table tr:hover {
-   background-color: #333333;
- }
- 
- /* Quick Search */
- #quick-search {
-   margin-right: 6px;
- }
- input[type="text"],
- input[type="search"],
- select,
- textarea {
-   background-color: #2b2f3a;
-   color: #eee;
-   border: 1px solid #444;
-   padding: 6px;
- }
- input:focus,
- select:focus,
- textarea:focus {
-   border-color: #0077aa;
-   outline: none;
- }
- 
- /* Icon Menu (if used) */
- #top-menu a.home,
- #top-menu a.my-page,
- #top-menu a.projects,
- #top-menu a.administration,
- #top-menu a.help {
-   background-position: 0% 40%;
-   background-repeat: no-repeat;
-   padding-left: 20px;
-   padding-top: 2px;
-   padding-bottom: 3px;
-   filter: brightness(0.8);
- }
- 
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+}
+
+#project-jump .drdn-items strong {
+  display: block;
+  color: #ffffff !important;
+  padding: 4px 0 6px;
+  font-weight: bold;
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4) !important;
+}
+
+
+
+/* --- RESPONSIVE STYLES --- */
+@media screen and (max-width: 768px) {
+  /* Top bar */
+  #top-menu {
+    background-color: #141414 !important;
+    color: #fff !important;
+  }
+#project-jump {
+    display: none !important;
+  }
+}
+
+  #top-menu a {
+    color: #ddd !important;
+  }
+
+  #top-menu a:hover {
+    color: #aad4ff !important;
+  }
+
+  /* Dropdown mobile menu */
+  .flyout-menu, .flyout-menu ul {
+    background-color: #2b2b2b !important;
+    border: none !important;
+    color: #ddd !important;
+  }
+
+  .flyout-menu li a {
+    background-color: #2a2a2a !important;
+    color: #eee !important;
+    border-bottom: 1px solid #444 !important;
+  }
+
+  .flyout-menu li a:hover {
+    background-color: #3a3a3a !important;
+    color: #fff !important;
+  }
+
+  /* Ensure header and main elements remain dark */
+  #header, #main, #content {
+    background-color: #141414 !important;
+    color: #ddd !important;
+  }
+}
+
+
+/* --- SELECT LIST BACKGROUND COLOR --- */
+select {
+  background-color: #2b2f3a !important;
+  color: #eee !important;
+  border: 1px solid #444 !important;
+}
+
+select:focus {
+  border-color: #0077aa !important;
+  outline: none !important;
+}
+
+select::-webkit-scrollbar {
+  width: 8px;
+}
+select::-webkit-scrollbar-thumb {
+  background: #444;
+}
+select::-webkit-scrollbar-track {
+  background: #2b2f3a;
+}
+
+/* Links */
+a {
+  color: #82cfff;
+  font-weight: bold;
+}
+a:hover {
+  color: #42aaff;
+  text-decoration: underline;
+}
+
+/* Headings */
+h2, h3, h4, .wiki h1, .wiki h2, .wiki h3 {
+  border-bottom: none;!important;
+  color: #e0e0e0;
+  font-family: "Trebuchet MS", Georgia, "Times New Roman", serif;
+}
+h2, .wiki h1 {
+  letter-spacing: -1px;
+}
+h4 {
+  border-bottom: none;!important;
+}
+
+/* Tables */
+table {
+  background-color: #2b2b2b !important;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+table th {
+  background-color: #424242 !important;
+  color: #2b2b2b !important;
+  border: none !important;
+  padding: 15px !important;
+  font-weight: bold;
+}
+
+table th a {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+table th a:hover {
+  color: #aad4ff !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+table td {
+  border: none !important;
+  padding-bottom: 10px !important;
+  padding-top 20px !important;
+}
+table tr:nth-child(odd) {
+  background-color: #2a2a2a;
+}
+
+table tr:nth-child(even) {
+  background-color: #242424;
+}
+
+table tr:hover {
+  background-color: #3a3a3a !important; /* Darker gray, ensures override */
+  color: #d0d0d0 !important; /* Keeps the text color readable */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* --- PROGRESS BAR DARK THEME FIX --- */
+
+table.progress {
+  border: none !important;
+  background-color: transparent !important;
+  border-radius: 4px;
+  height: 1em;
+  overflow: hidden;
+  margin-top: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+table.progress td.closed {
+  background-color: #00c2ff  !important; /* active progress - deep blue */
+  transition: width 0.3s ease-in-out;
+}
+
+table.progress td.todo {
+  background-color: #3a3a3a !important; /* remaining progress - dark grey */
+}
+
+p.percent {
+  color: #cccccc !important;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+
+/* PROJECT page - Overview Table */
+.box table {
+  background-color: #2b2b2b;
+  color: #d0d0d0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4) !important;
+}
+.box table th {
+  background-color: #1f1f1f;
+  color: #d0d0d0;
+
+}
+.box table td {
+  background-color: #2a2a2a;
+}
+.box table tr:nth-child(odd) {
+  background-color: #2a2a2a;
+}
+
+.box table tr:nth-child(even) {
+  background-color: #242424;
+}
+
+.box table tr:hover {
+  background-color: #333333;
+}
+
+
+/* --- PROJECT PAGE CLEAN UP  --- */
+/* Apply shadow only to top-level project containers */
+#projects-index > ul.projects.root > li.root {
+  background-color: #2a2a2a !important;
+  box-shadow: 3px 6px 8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 0 !important;
+}
+
+
+.project.root h3, 
+.project h3, 
+.projects .root > .name a {
+  font-weight: 600;
+}
+
+.projects ul, 
+.projects ul.projects,
+ul.projects li::before {
+  border-left: none !important;
+  content: none !important;
+
+}
+
+
+/* ACTIVITY - PAGE Remove thin lines above h3 dates like "Today", "20 March 2025" */
+#activity h3 {
+  border: none !important;
+  background: #424242!important;
+  color: #ddd !important;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+/* GANT - Table header colour and text fix */
+.gantt_hdr {
+  background: #424242!important;
+  color: #ddd !important;
+}
+
+
+/* --- USER PROFILE PAGE TABLE FIX --- */
+#content table.list {
+  background-color: #2b2b2b !important;
+  border: none !important;
+  border-collapse: collapse !important;
+  width: 100%;
+}
+
+#content table.list th {
+  background-color: #424242 !important;
+  color: #ffffff !important;
+  padding: 12px !important;
+  font-weight: bold;
+  border: none !important;
+  text-align: left;
+}
+
+#content table.list td {
+  background-color: #2a2a2a !important;
+  color: #dddddd !important;
+  border: none !important;
+  padding: 10px !important;
+  text-align: left;
+}
+
+/* Alternating row colours for clarity */
+#content table.list tr:nth-child(odd) td {
+  background-color: #2a2a2a !important;
+}
+
+#content table.list tr:nth-child(even) td {
+  background-color: #242424 !important;
+}
+
+/* Hover effect */
+#content table.list tr:hover td {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Link styling inside user profile tables */
+#content table.list td a {
+  color: #82cfff !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#content table.list td a:hover {
+  color: #aad4ff !important;
+  text-decoration: underline;
+}
+
+/* Quick Search ON TOP OF THE PAGE */
+#quick-search {
+  margin-right: 6px;
+}
+input[type="text"],
+input[type="search"],
+select,
+textarea {
+  background-color: #2b2f3a;
+  color: #ddd;
+  border: 1px solid #444;
+  padding: 6px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0077aa;
+  outline: none;
+}
+
+
+/* FOOTER STYLES - DO NOT MOVE FROM HERE */
+#footer {
+  background-color: #3a3a3a !important;
+  color: #aaa !important;
+  border: 0px !important;
+}
+
