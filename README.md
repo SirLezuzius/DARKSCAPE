@@ -52,6 +52,12 @@ Most major browsers (Chrome, Firefox, Safari)
 
 📸 Screenshots
 
+![image](https://github.com/user-attachments/assets/b3895b8c-31eb-46de-91e0-b2db603d039c)
+![image](https://github.com/user-attachments/assets/efbd4375-a469-4e4c-817f-9af8ec4ad00c)
+![image](https://github.com/user-attachments/assets/18698459-855c-42fc-be03-01d1be2bfb0a)
+
+
+
 🛠 Customisation
 You're welcome to modify the CSS or images to suit your organisation's branding. Just remember to keep backups if upgrading the theme later.
 
